@@ -1,0 +1,584 @@
+{
+  "source_path": "C:\\Users\\Acharya N\\Desktop\\SOLO-version\\FPGuard-AI\\data\\processed\\cicids2018\\cicids2018_audit_ready.csv",
+  "source_sha256": "aa7ace995ac68a15cfd5db91af76040060967d2a7e3e0cb7bde85479799b107c",
+  "row_count": 613071,
+  "column_count": 80,
+  "label_counts_raw": {
+    "Benign": 544200,
+    "Infilteration": 68871
+  },
+  "label_counts_mapped": {
+    "benign": 544200,
+    "attack": 68871
+  },
+  "stage6a_grouping": {
+    "feature_columns": [
+      "protocol",
+      "flow_duration",
+      "tot_fwd_pkts",
+      "tot_bwd_pkts",
+      "totlen_fwd_pkts",
+      "totlen_bwd_pkts",
+      "fwd_pkt_len_max",
+      "fwd_pkt_len_min",
+      "fwd_pkt_len_mean",
+      "fwd_pkt_len_std",
+      "bwd_pkt_len_max",
+      "bwd_pkt_len_min",
+      "bwd_pkt_len_mean",
+      "bwd_pkt_len_std",
+      "flow_byts/s",
+      "flow_pkts/s",
+      "flow_iat_mean",
+      "flow_iat_std",
+      "flow_iat_max",
+      "flow_iat_min",
+      "fwd_iat_tot",
+      "fwd_iat_mean",
+      "fwd_iat_std",
+      "fwd_iat_max",
+      "fwd_iat_min",
+      "bwd_iat_tot",
+      "bwd_iat_mean",
+      "bwd_iat_std",
+      "bwd_iat_max",
+      "bwd_iat_min",
+      "fwd_psh_flags",
+      "bwd_psh_flags",
+      "fwd_urg_flags",
+      "bwd_urg_flags",
+      "fwd_header_len",
+      "bwd_header_len",
+      "fwd_pkts/s",
+      "bwd_pkts/s",
+      "pkt_len_min",
+      "pkt_len_max",
+      "pkt_len_mean",
+      "pkt_len_std",
+      "pkt_len_var",
+      "fin_flag_cnt",
+      "syn_flag_cnt",
+      "rst_flag_cnt",
+      "psh_flag_cnt",
+      "ack_flag_cnt",
+      "urg_flag_cnt",
+      "cwe_flag_count",
+      "ece_flag_cnt",
+      "down/up_ratio",
+      "pkt_size_avg",
+      "fwd_seg_size_avg",
+      "bwd_seg_size_avg",
+      "fwd_byts/b_avg",
+      "fwd_pkts/b_avg",
+      "fwd_blk_rate_avg",
+      "bwd_byts/b_avg",
+      "bwd_pkts/b_avg",
+      "bwd_blk_rate_avg",
+      "subflow_fwd_pkts",
+      "subflow_fwd_byts",
+      "subflow_bwd_pkts",
+      "subflow_bwd_byts",
+      "init_fwd_win_byts",
+      "init_bwd_win_byts",
+      "fwd_act_data_pkts",
+      "fwd_seg_size_min",
+      "active_mean",
+      "active_std",
+      "active_max",
+      "active_min",
+      "idle_mean",
+      "idle_std",
+      "idle_max",
+      "idle_min"
+    ],
+    "excluded_by_stage6a_name_heuristics": [
+      "dst_port",
+      "timestamp"
+    ],
+    "operation": "frame.groupby(feature_columns, dropna=False, sort=False).ngroup(); label is mapped before comparing group label uniqueness; no rounding.",
+    "conflicting_group_count": 7848,
+    "rows_in_conflicting_groups": 72483,
+    "conflicting_rows_by_label": {
+      "benign": 53745,
+      "attack": 18738
+    },
+    "conflicting_rows_by_raw_label": {
+      "Benign": 53745,
+      "Infilteration": 18738
+    },
+    "conflict_group_size_distribution": {
+      "2": 2981,
+      "3": 1321,
+      "4": 808,
+      "5": 496,
+      "6": 396,
+      "7": 290,
+      "8": 253,
+      "9": 206,
+      "10": 165,
+      "11": 149,
+      "12": 98,
+      "13": 71,
+      "14": 75,
+      "15": 70,
+      "16": 44,
+      "17": 34,
+      "18": 46,
+      "19": 42,
+      "20": 20,
+      "21": 18,
+      "22": 19,
+      "23": 24,
+      "24": 21,
+      "25": 11,
+      "26": 12,
+      "27": 8,
+      "28": 11,
+      "29": 9,
+      "30": 2,
+      "31": 11,
+      "32": 8,
+      "33": 3,
+      "34": 1,
+      "35": 2,
+      "36": 9,
+      "37": 6,
+      "38": 12,
+      "39": 3,
+      "40": 3,
+      "41": 3,
+      "42": 3,
+      "43": 3,
+      "44": 1,
+      "45": 2,
+      "46": 2,
+      "47": 3,
+      "48": 4,
+      "49": 1,
+      "50": 1,
+      "51": 2,
+      "52": 1,
+      "54": 3,
+      "55": 2,
+      "56": 4,
+      "57": 1,
+      "58": 2,
+      "59": 1,
+      "62": 1,
+      "63": 1,
+      "66": 1,
+      "67": 2,
+      "68": 1,
+      "69": 1,
+      "70": 1,
+      "71": 1,
+      "76": 2,
+      "79": 1,
+      "82": 1,
+      "83": 1,
+      "85": 1,
+      "86": 1,
+      "87": 1,
+      "88": 2,
+      "89": 1,
+      "90": 2,
+      "93": 1,
+      "94": 1,
+      "100": 2,
+      "106": 1,
+      "108": 1,
+      "114": 1,
+      "129": 1,
+      "140": 1,
+      "142": 1,
+      "161": 1,
+      "176": 1,
+      "184": 1,
+      "199": 1,
+      "247": 1,
+      "263": 1,
+      "267": 1,
+      "292": 1,
+      "304": 1,
+      "336": 1,
+      "341": 1,
+      "374": 1,
+      "411": 1,
+      "420": 1,
+      "546": 1,
+      "616": 1,
+      "767": 1,
+      "2365": 1,
+      "19428": 1
+    },
+    "conflict_variation_by_excluded_fields": {
+      "dst_port+timestamp": {
+        "group_count": 2134,
+        "rows": 48251
+      },
+      "no_excluded_field_variation": {
+        "group_count": 312,
+        "rows": 624
+      },
+      "timestamp": {
+        "group_count": 5402,
+        "rows": 23608
+      }
+    },
+    "representative_groups": [
+      {
+        "feature_group_fingerprint_sha256": "d065966b698529a9df03bad20c77c85f894494ea3417b9eee7f1e43a6c548ec8",
+        "rows_in_group": 19428,
+        "label_counts": {
+          "benign": 15672,
+          "attack": 3756
+        },
+        "source_csv_record_positions_1_based": [
+          344554,
+          344555,
+          344557,
+          344560,
+          344562,
+          344567,
+          344568,
+          344569
+        ],
+        "record_position_note": "1-based CSV record position including header at position 1.",
+        "excluded_column_distinct_value_counts": {
+          "dst_port": 999,
+          "timestamp": 38
+        }
+      },
+      {
+        "feature_group_fingerprint_sha256": "efa4f8c713469845f6ec2edd77e2d811ebe0e40eb2733aa7822db71fadf8c794",
+        "rows_in_group": 2365,
+        "label_counts": {
+          "benign": 1773,
+          "attack": 592
+        },
+        "source_csv_record_positions_1_based": [
+          344578,
+          344611,
+          344613,
+          344621,
+          344686,
+          344727,
+          344749,
+          344775
+        ],
+        "record_position_note": "1-based CSV record position including header at position 1.",
+        "excluded_column_distinct_value_counts": {
+          "dst_port": 832,
+          "timestamp": 26
+        }
+      },
+      {
+        "feature_group_fingerprint_sha256": "e183619b7edd01665bd1c47791f7356146edf29741bc96ceb7cf96239d9e8fec",
+        "rows_in_group": 767,
+        "label_counts": {
+          "benign": 668,
+          "attack": 99
+        },
+        "source_csv_record_positions_1_based": [
+          335,
+          336,
+          564,
+          804,
+          1512,
+          2508,
+          2693,
+          2831
+        ],
+        "record_position_note": "1-based CSV record position including header at position 1.",
+        "excluded_column_distinct_value_counts": {
+          "dst_port": 420,
+          "timestamp": 406
+        }
+      },
+      {
+        "feature_group_fingerprint_sha256": "09542721317b0fff41c7a77814181bcf137992833055d9312e17d5edb13ab9aa",
+        "rows_in_group": 616,
+        "label_counts": {
+          "benign": 502,
+          "attack": 114
+        },
+        "source_csv_record_positions_1_based": [
+          344556,
+          344563,
+          344603,
+          344633,
+          344687,
+          344740,
+          344741,
+          344766
+        ],
+        "record_position_note": "1-based CSV record position including header at position 1.",
+        "excluded_column_distinct_value_counts": {
+          "dst_port": 410,
+          "timestamp": 34
+        }
+      },
+      {
+        "feature_group_fingerprint_sha256": "28eb1c603cf9ab1790c445abab47cb6d1b2047f60cce0fa4510c179794527bbb",
+        "rows_in_group": 546,
+        "label_counts": {
+          "benign": 484,
+          "attack": 62
+        },
+        "source_csv_record_positions_1_based": [
+          248,
+          417,
+          418,
+          437,
+          681,
+          1146,
+          1367,
+          2134
+        ],
+        "record_position_note": "1-based CSV record position including header at position 1.",
+        "excluded_column_distinct_value_counts": {
+          "dst_port": 296,
+          "timestamp": 291
+        }
+      },
+      {
+        "feature_group_fingerprint_sha256": "7c23fc7eb35b69391f3ff14cdb9efa2896dbe8de2f758791fbc39b45685b4dfa",
+        "rows_in_group": 420,
+        "label_counts": {
+          "benign": 368,
+          "attack": 52
+        },
+        "source_csv_record_positions_1_based": [
+          325,
+          326,
+          799,
+          1493,
+          2673,
+          3526,
+          3708,
+          3906
+        ],
+        "record_position_note": "1-based CSV record position including header at position 1.",
+        "excluded_column_distinct_value_counts": {
+          "dst_port": 227,
+          "timestamp": 225
+        }
+      },
+      {
+        "feature_group_fingerprint_sha256": "651c488898b24155619f61ec38561dd1b5d61af440f35f01f26df21c8cfd1b74",
+        "rows_in_group": 411,
+        "label_counts": {
+          "benign": 303,
+          "attack": 108
+        },
+        "source_csv_record_positions_1_based": [
+          379644,
+          379648,
+          379712,
+          380006,
+          380672,
+          380678,
+          381529,
+          381779
+        ],
+        "record_position_note": "1-based CSV record position including header at position 1.",
+        "excluded_column_distinct_value_counts": {
+          "dst_port": 399,
+          "timestamp": 310
+        }
+      },
+      {
+        "feature_group_fingerprint_sha256": "ad8a491da9793d807cfbbeee08a1d47ecd67f44b80dd6c10d0aff4f3eb597eaf",
+        "rows_in_group": 374,
+        "label_counts": {
+          "benign": 312,
+          "attack": 62
+        },
+        "source_csv_record_positions_1_based": [
+          344668,
+          344721,
+          344722,
+          344755,
+          344776,
+          344781,
+          344782,
+          344809
+        ],
+        "record_position_note": "1-based CSV record position including header at position 1.",
+        "excluded_column_distinct_value_counts": {
+          "dst_port": 266,
+          "timestamp": 37
+        }
+      }
+    ]
+  },
+  "independent_reproduction": {
+    "method": "Re-applied the audited CSV to the same documented 77-column pandas exact-value grouping operation.",
+    "conflicting_group_count": 7848,
+    "rows_in_conflicting_groups": 72483,
+    "matches_stage6a_conflict_counts": true,
+    "duplicate_excess_count": 6089,
+    "duplicate_group_count": 5814,
+    "matches_stage6a_duplicate_counts": true
+  },
+  "stage6a_name_heuristic_review": {
+    "possible_identifiers": [
+      "dst_port"
+    ],
+    "possible_timestamps": [
+      "timestamp"
+    ],
+    "possible_attack_category_columns": [],
+    "possible_capture_context_columns": [],
+    "possible_target_or_post_event_columns": []
+  },
+  "exact_duplicate_rows": {
+    "duplicate_excess_count": 6089,
+    "rows_in_duplicate_groups": 11903,
+    "duplicate_group_count": 5814,
+    "definition": "All 80 parsed source columns equal, including raw label."
+  },
+  "same_all_feature_values_conflicting_labels": {
+    "group_count": 6601,
+    "rows": 13204,
+    "definition": "All 79 feature columns equal, including timestamp and dst_port when present, but mapped labels differ."
+  },
+  "conflicts_after_adding_excluded_columns": {
+    "dst_port": {
+      "conflicting_group_count": 9390,
+      "rows_in_conflicting_groups": 51995
+    },
+    "timestamp": {
+      "conflicting_group_count": 2044,
+      "rows_in_conflicting_groups": 13205
+    },
+    "dst_port+timestamp": {
+      "conflicting_group_count": 6601,
+      "rows_in_conflicting_groups": 13204
+    }
+  },
+  "rounding_assessment": {
+    "rounding_applied_by_stage6a": false,
+    "near_duplicate_rounding_analysis_performed": false,
+    "status": "unresolved",
+    "reason": "Stage 6A compares parsed values exactly. This audit cannot establish whether upstream extraction rounded values before these CSVs were created."
+  },
+  "capture_context": {
+    "timestamp": {
+      "column_present": true,
+      "parsed_values": true,
+      "parse_failures": 0,
+      "distinct_capture_dates": 1,
+      "minimum_timestamp_value": "2018-02-28T01:00:00",
+      "maximum_timestamp_value": "2018-02-28T12:59:59",
+      "source_timezone_information": "no explicit timezone offset found; parsed values retain their naive wall-clock dates",
+      "date_counts_by_label": {
+        "2018-02-28": {
+          "benign": 544200,
+          "attack": 68871
+        }
+      }
+    },
+    "destination_port": {
+      "column_present": true,
+      "distinct_values_including_missing": 13650,
+      "most_common_values_and_counts": [
+        {
+          "value": "53",
+          "count": 212047
+        },
+        {
+          "value": "443",
+          "count": 146141
+        },
+        {
+          "value": "3389",
+          "count": 46394
+        },
+        {
+          "value": "80",
+          "count": 24293
+        },
+        {
+          "value": "445",
+          "count": 21287
+        },
+        {
+          "value": "135",
+          "count": 10963
+        },
+        {
+          "value": "0",
+          "count": 10740
+        },
+        {
+          "value": "22",
+          "count": 2871
+        },
+        {
+          "value": "139",
+          "count": 1443
+        },
+        {
+          "value": "23",
+          "count": 1287
+        }
+      ]
+    },
+    "protocol": {
+      "column_present": true,
+      "counts": {
+        "6": 385716,
+        "17": 216615,
+        "0": 10740
+      }
+    }
+  },
+  "evaluation_design": {
+    "capture_days_observed": 1,
+    "cross_day_holdout_supported": false,
+    "group_holdout_supported_for_exact_duplicates": true,
+    "recommended_primary_design": "If Stage 6B proceeds, keep exact all-feature groups (all 79 non-label fields) indivisible across train/validation/test. Allocate whole groups with class balance checked after assignment; mixed-label groups make ordinary row-level stratification invalid. Report achieved partition prevalence and fail if a partition lacks a class needed for its metrics.",
+    "limitations": [
+      "A single observed date cannot support an independent cross-day holdout.",
+      "No IP, flow ID, or independent capture-session key is present for grouping near-duplicate or related flows.",
+      "Exact duplicate grouping cannot guarantee separation of all related flows or capture artifacts.",
+      "A within-day chronological holdout would test only later records from this same observed capture context."
+    ]
+  },
+  "preprocessing_review": {
+    "missing_values_total": 4041,
+    "missing_by_feature": {
+      "flow_byts/s": 4041
+    },
+    "infinities_by_numeric_feature": {
+      "flow_byts/s": 2128,
+      "flow_pkts/s": 6169
+    },
+    "constant_columns_observed_on_full_audit_input": [
+      "bwd_psh_flags",
+      "bwd_urg_flags",
+      "fwd_byts/b_avg",
+      "fwd_pkts/b_avg",
+      "fwd_blk_rate_avg",
+      "bwd_byts/b_avg",
+      "bwd_pkts/b_avg",
+      "bwd_blk_rate_avg"
+    ],
+    "recommendation": "Convert +/- infinity to missing and fit median imputers on training rows only. If dropping constants, detect them using training rows only inside the fitted pipeline; do not select them using validation/test."
+  },
+  "metadata": {
+    "report_version": 1,
+    "generated_at_utc": "2026-10-09T21:50:53.771460+00:00",
+    "analysis_mode": "diagnostic_only_no_training_no_splits",
+    "implementation": "investigate_cicids2018_audit.py",
+    "memory_note": "The source CSV is loaded into a pandas DataFrame for exact pandas groupby reproduction; this is not a streaming-memory analysis."
+  },
+  "stage6a_reference": {
+    "report_path": "C:\\Users\\Acharya N\\Desktop\\SOLO-version\\FPGuard-AI\\data\\audit_reports\\cicids2018_audit_ready\\real_data_audit.json",
+    "recorded_conflicting_group_count": 7848,
+    "recorded_conflicting_rows": 72483,
+    "conflict_counts_match": true,
+    "duplicate_counts_match": true
+  }
+}
